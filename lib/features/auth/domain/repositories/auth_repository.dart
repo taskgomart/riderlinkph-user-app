@@ -218,7 +218,8 @@ class AuthRepository implements AuthRepositoryInterface{
     }catch(e) {
     }
     apiClient.updateHeader(token, address);
-    return await _storage.write(key: AppConstants.token, value: token);
+    await _storage.write(key: AppConstants.token, value: token);
+    return true;
 
   }
 
